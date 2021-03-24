@@ -1,11 +1,18 @@
-<h3><i class="fas fa-book-reader"> Quotes partie 2</i></h3>
+<div class="quotes-header">
+    <h3> Quotes partie 2</h3>
+    <a href="/" class="btn-floating btn-large waves-effect waves-light green home-btn"><i class="material-icons"><i class="fas fa fa-home"></i></i></a>
+</div>
 <div class="section">
     <p class="lead"> Generateur de citation</p>
 </div>
 <div class="divider"></div>
 <div class="section">
     <div class="quotes-content">
-        <div class="quotes-div"></div>
+        <form action="#">
+            <p class="range-field">
+            <input type="range" id="test5" min="1" max="5" start="0"/>
+            </p>
+        </form>
         <div class="quotes-buttons">
             <bouton class="btn green darken-1 waves-effect waves-light" onclick="createQuote()">
                 Generer Citation
@@ -19,31 +26,40 @@
 
 <script src="/js/source.json"></script>
 <script>
-    const quotes = new QuotesTwo(source, 7);
+    const quotes = new QuotesTwo(source);
 
     const createQuote = () => {
-        if (document.querySelector('.quotes-div').childNodes.length != 0) {
-            document.querySelectorAll('.quotes').forEach((element) => {
-                document.querySelector('.quotes-div').removeChild(element);
-            })
+        let ul = document.createElement('ul');
+        ul.classList.add('collection', 'quotes-div');
+
+        if (document.querySelector('.quotes-content ul') !== null) {
+            document.querySelector('.quotes-content ul').remove();
         }
-        for (let i = 0; i < quotes.generateQuotes().length; i++) {
+
+        for (let i = 0; i < document.querySelector('#test5').value; i++) {
+            let li = document.createElement('li');
+            li.classList.add('collection-item', 'avatar');
+
+            let icon = document.createElement('i');
+            icon.classList.add('material-icons', 'circle', 'green');
+            icon.innerHTML = `C${i}`;
+            
             let span = document.createElement('span');
-            span.innerHTML= quotes.generateQuotes()[i];
+            span.innerHTML= quotes.generateQuotes(document.querySelector('#test5').value)[i];
             span.classList.add('quotes');
-            document.querySelector('.quotes-div').appendChild(span);
+
+            li.appendChild(icon);
+            li.appendChild(span);
+            ul.appendChild(li);
         }
+        document.querySelector('.quotes-content').appendChild(ul);
     }
 
     const endQuote = () => {
-        if (document.querySelector('.quotes-div').childNodes.length != 0) {
-            document.querySelectorAll('.quotes').forEach((element) => {
-                document.querySelector('.quotes-div').removeChild(element);
-            })
-            let span = document.createElement('span');
-            span.innerHTML= quotes.deleteQuotes();
-            span.classList.add('quotes');
-            document.querySelector('.quotes-div').appendChild(span);
+        if (document.querySelector('.quotes-content ul') !== null) {
+            document.querySelector('.quotes-content ul').remove();
         }
     }
+
+
 </script>

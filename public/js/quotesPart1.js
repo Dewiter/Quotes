@@ -1,6 +1,5 @@
 class QuotesOne {
     constructor(source) {
-        console.log(source)
         this.source = (source);
     }
 

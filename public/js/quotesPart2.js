@@ -7,9 +7,9 @@ class QuotesTwo {
         this.res = [];
 
         if (nb < 1) {
-            nb = 1
+            nb = 1;
         } else if (nb > 5) {
-            nb = 5
+            nb = 5;
         } else {
             nb = nb;
         }
