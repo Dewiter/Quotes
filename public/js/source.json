@@ -1,0 +1,26 @@
+source = [{
+            "start" : "Exige beaucoup de toi-même et",
+            "middle" : "attends peu des autres.",
+            "end": "Ainsi beaucoup d'ennuis te seront épargnés."
+        },
+        {
+            "start" : "Dans la vie",
+            "middle" : "on ne fait pas ce que l'on veut mais",
+            "end": "on est responsable de ce que l'on est."
+        },
+        {
+            "start" : "L'une des plus grandes douleurs est",
+            "middle" : "d'aimer une personne que",
+            "end": "tu ne peux pas avoir."
+        },
+        {
+            "start" : "On passe une moitié de sa vie à",
+            "middle" : "attendre ceux qu'on aimera et l'autre moitié",
+            "end": "à quitter ceux qu'on aime."
+        },
+        {
+            "start" : "On passe une moitié de sa vie à",
+            "middle" : "attendre ceux qu'on aimera et l'autre moitié",
+            "end": "à quitter ceux qu'on aime."
+        }
+    ]

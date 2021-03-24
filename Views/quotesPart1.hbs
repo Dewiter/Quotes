@@ -1,0 +1,31 @@
+<h3><i class="fas fa-book-reader"> Quotes partie 1</i></h3>
+<div class="section">
+    <p class="lead"> Generateur de citation</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+    <div class="quotes-content">
+        <span class="quotes"></span>
+        <div class="quotes-buttons">
+            <bouton class="btn green darken-1" onclick="createQuote()">
+                Generer Citation
+            </bouton>
+            <bouton class="btn red darken-1" onclick="endQuote()">
+                Arreter citation
+            </bouton>
+        </div>
+    </div>
+</div>
+
+<script src="/js/source.json"></script>
+<script>
+    const quotes = new QuotesOne(source);
+
+    const createQuote = () => {
+       document.querySelector('.quotes').innerHTML= quotes.generateQuotes();
+    }
+
+    const endQuote = () => {
+        document.querySelector('.quotes').innerHTML= quotes.deleteQuote();
+    }
+</script>

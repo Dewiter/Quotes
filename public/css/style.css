@@ -1,0 +1,36 @@
+.container-quotes {
+    display: flex;
+    justify-content: center;
+}
+
+.quotes-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.quotes-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin : 10px
+}
+
+.quotes-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.quotes {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+body {
+    font-family: 'Roboto';
+}
+
+h3 {
+    font-family: 'Roboto'
+}

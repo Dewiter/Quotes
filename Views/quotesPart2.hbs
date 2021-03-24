@@ -1,0 +1,49 @@
+<h3><i class="fas fa-book-reader"> Quotes partie 2</i></h3>
+<div class="section">
+    <p class="lead"> Generateur de citation</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+    <div class="quotes-content">
+        <div class="quotes-div"></div>
+        <div class="quotes-buttons">
+            <bouton class="btn green darken-1 waves-effect waves-light" onclick="createQuote()">
+                Generer Citation
+            </bouton>
+            <bouton class="btn red darken-1 waves-effect waves-light" onclick="endQuote()">
+                Arreter citation
+            </bouton>
+        </div>
+    </div>
+</div>
+
+<script src="/js/source.json"></script>
+<script>
+    const quotes = new QuotesTwo(source, 7);
+
+    const createQuote = () => {
+        if (document.querySelector('.quotes-div').childNodes.length != 0) {
+            document.querySelectorAll('.quotes').forEach((element) => {
+                document.querySelector('.quotes-div').removeChild(element);
+            })
+        }
+        for (let i = 0; i < quotes.generateQuotes().length; i++) {
+            let span = document.createElement('span');
+            span.innerHTML= quotes.generateQuotes()[i];
+            span.classList.add('quotes');
+            document.querySelector('.quotes-div').appendChild(span);
+        }
+    }
+
+    const endQuote = () => {
+        if (document.querySelector('.quotes-div').childNodes.length != 0) {
+            document.querySelectorAll('.quotes').forEach((element) => {
+                document.querySelector('.quotes-div').removeChild(element);
+            })
+            let span = document.createElement('span');
+            span.innerHTML= quotes.deleteQuotes();
+            span.classList.add('quotes');
+            document.querySelector('.quotes-div').appendChild(span);
+        }
+    }
+</script>
