@@ -1,19 +1,20 @@
 class QuotesTwo {
-    constructor(source, nb = 1) {
-        if (nb < 1) {
-            this.nb = 1
-        } else if (nb > 5) {
-            this.nb = 5
-        } else {
-            this.nb = nb;
-        }
-
-        this.source = (source);
+    constructor(source) {
+        this.source = source
     }
 
-    generateQuotes() {
+    generateQuotes(nb = 1) {
         this.res = [];
-        for (let i = 0; i < this.nb; i++) {
+
+        if (nb < 1) {
+            nb = 1
+        } else if (nb > 5) {
+            nb = 5
+        } else {
+            nb = nb;
+        }
+
+        for (let i = 0; i < nb; i++) {
             let tmp = "";
             let start = [];
             let middle = [];
@@ -34,7 +35,6 @@ class QuotesTwo {
 
         for (let i = 0; i < this.res.length; i++) {
             console.log(this.res[i]);
-            
         }
         return this.res;
     }

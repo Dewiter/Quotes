@@ -27,6 +27,12 @@
     padding-bottom: 10px;
 }
 
+.quotes-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 body {
     font-family: 'Roboto';
 }
